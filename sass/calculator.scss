@@ -1,0 +1,140 @@
+@import "styles";
+@import "reset";
+
+*{
+    font-family: $SpaceMono;
+}
+
+body{
+    width: 100vw;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color:$LightGrayishCyan;
+    font-family: $SpaceMono;
+    
+    input.main-input{
+        @include input;
+    }
+
+    h3.input-title{
+        @include title;
+    }
+
+    main.tipCalculator{
+        background-color: $White;
+        padding: 2rem;
+        width: 52rem;  
+        border-radius: 20px;   
+        display: flex; 
+        flex-direction: row;        
+
+        @media screen and(max-width: $max-width) { width: 100vw; flex-direction: column; }
+
+        div#inputs{
+            width: 50%;
+            margin: 1rem;
+
+            @media screen and(max-width: $max-width) { width: 100%; margin: 0;}
+
+            div.bill{                
+                @include inputWithImage;
+            }
+
+            div.selectTip{
+                margin: 1.5rem 0;
+                width: 100%;
+
+                div.btnGroup{
+                    margin: 1rem 0;
+                    display: flex;
+                    flex-wrap: wrap;
+                    flex-grow: 1;
+                    flex-shrink: 1;
+                    justify-content: space-between;
+
+                    button{
+                        @include gorjetaBtn;
+                    }
+                }
+
+                input.customTip{
+                    @include input;
+                    text-align: left;
+                    width: $widthSelectTip;
+                    margin: $marginSelectTip;
+                }
+            } 
+            
+            div.numberPeople{
+                @include inputWithImage;
+            }
+        }
+
+        div#result{
+            width: 50%;
+            margin-left: 1rem;
+            padding: 2rem;
+            border-radius: 10px;
+            background-color: $VeryDarkCyan;
+            color: $White;
+
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+
+            @media screen and(max-width: $max-width) { width: 100%; margin: 0; }
+
+            div{
+                margin-bottom: 2rem;
+                position: relative;
+                
+
+                p.result_text{
+                    font-size: 0.9rem;
+                    color: $VeryLightGrayishCyan;
+                    display: flex;
+                    justify-content: space-between;
+
+                    &::after{
+                        content:"/ pessoa";
+                        position: absolute;                            
+                        bottom: 0rem;
+                        color: $DarkGrayishCyan;
+                    }
+
+                    span.result_value{
+                        font-weight: 700;
+                        font-size: 2.3rem;
+                        color: $StrongCyan;
+                    }
+                }
+            }
+
+            button{
+                cursor: pointer;
+                background-color: $StrongCyan;
+                color: $VeryDarkCyan;
+                border: none;
+                border-radius: 5px;
+                width: 100%;
+                padding: .3rem 0;
+                font-size: 1.2rem;
+                text-transform: uppercase;
+                transition: 0.3s;
+
+                &:hover{
+                    background-color: $LightGrayishCyan;
+                }
+            }
+        }
+    }
+
+    .attribution{
+        position: absolute;
+        bottom: 1rem;
+
+        @media screen and(max-width: $max-width) { font-size: .6rem;}
+    }
+}

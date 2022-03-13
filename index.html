@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+  <link rel="stylesheet" href="css/calculator.min.css">
+  <title>Frontend Mentor | Tip calculator app</title>
+</head>
+<body>
+
+  <main class="tipCalculator">
+    <div id="inputs">
+
+      <div class="bill">
+        <h3 class="input-title">Conta</h3>  
+        <div class="input-number">
+          <input class="main-input conta" type="text" placeholder="0">
+          <img class="iconDollar" src="images/icon-dollar.svg" alt="Dollar Icon">
+        </div>       
+      </div>
+
+      <div class="selectTip">
+        <h3 class="input-title">Selecionar Gorjeta %</h3> 
+        <div class="btnGroup">
+          <button class="selectTip">5%</button>
+          <button class="selectTip">10%</button>
+          <button class="selectTip">15%</button>
+          <button class="selectTip">25%</button>
+          <button class="selectTip">50%</button>
+          <input class="customTip" type="text" placeholder="Custom" aria-placeholder="Custom"> 
+        </div>
+             
+      </div>
+
+      <div class="numberPeople">
+        <h3 class="input-title">Numero de Pessoas</h3>
+        <div class="input-number">
+          <input class="main-input peoples" type="text" placeholder="0" name="numberPeoples" min="1" max="3" maxlength="3">
+          <img src="images/icon-person.svg" alt="Peoples Number">
+        </div>
+        
+      </div>
+    </div>
+    <div id="result" >
+      <div>
+        <div>
+          <p class="result_text">
+            Valor da gorjeta                 
+            <span class="result_value gorjeta">
+              $0.00
+            </span>
+          </p>
+          
+        </div>
+  
+        <div>
+          <p class="result_text">
+            Total   
+            <span class="result_value total">
+              $0.00
+            </span>
+          </p>
+        </div>
+      </div>
+     
+      <button>Reset</button>
+    </div>
+  </main>
+
+  <div class="attribution">
+    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
+    Coded by <a href="https://github.com/guilhermeSDB">Guilherme S.</a>.
+  </div>
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>
